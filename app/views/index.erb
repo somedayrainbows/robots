@@ -1,0 +1,35 @@
+<h1>My Robots</h1>
+
+<% @robots.each do |robot| %>
+<table>
+  <tr align="left">
+    <th>Robot name</th>
+    <th>&nbsp;</th>
+    <th>City</th>
+    <th>&nbsp;</th>
+    <th>State</th>
+    <th>&nbsp;</th>
+    <th>Department</th>
+  </tr>
+  <tr>
+    <td><%= robot.name %></td>
+    <td>&nbsp;</td>
+    <td><%= robot.city  %></td>
+    <td>&nbsp;</td>
+    <td><%= robot.state  %></td>
+    <td>&nbsp;</td>
+    <td><%= robot.department  %></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+  <tr><td><a href="/robots/<%= robot.id %>/edit">Edit this robot</a></td></tr>
+  <form action="/robots/<%= robot.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <tr><td><input type="submit" value="delete"/></td></tr>
+  <hr>
+  </form>
+<% end %>
+</table>
+
+<hr>
+<p><a href="/robots/new">Enter a new robot</a>  |  <a href="/">Return to dashboard</a></p>

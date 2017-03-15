@@ -1,0 +1,20 @@
+<form action="/robots/<%= @robot.id %>" method="post">
+  <h1>Edit a Robot</h1>
+
+  <h3>Current information on file for this robot</h3>
+  <p>Name: <%= @robot.name %></a></h3>
+  <p>City: <%= @robot.city  %></p>
+  <p>State: <%= @robot.state  %></p>
+  <p>Department: <%= @robot.department  %></p>
+  <hr>
+  <h3>Enter the new information for this robot:</h3>
+  <em>Note: do not leave any fields blank.</em>
+  <input type="hidden" name="_method" value="PUT" />
+  <p>Robot's new name: <input type="text" name="robot[name]" value="<%= @robot.name %>"/></input></p>
+  <p>Robot's new city: <input type="text" name="robot[city]" value="<%= @robot.city %>"/></input></p>
+  <p>Robot's new state: <input type="text" name="robot[state]" value="<%= @robot.state %>"/></input></p>
+  <p>Robot's new department: <input type="text" name="robot[department]" value="<%= @robot.department %>"/></input></p>
+  <p><input type="submit"/></p>
+</form>
+
+<p><a href="/robots">Cancel and return to robot index</a></p>
